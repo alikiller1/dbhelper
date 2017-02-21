@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import per.liuqh.dbhepler.generate.GenerateException;
 import per.liuqh.dbhepler.generate.domain.DatabaseTableInfo;
 
 /**
@@ -14,13 +15,14 @@ import per.liuqh.dbhepler.generate.domain.DatabaseTableInfo;
  */
 public class DatabaseTableInfoUtils {
 
-    public static List<DatabaseTableInfo> load(Connection conn, String database) throws SQLException {
+    public static List<DatabaseTableInfo> load(Connection conn, String database,String tableName) throws Exception {
         List<DatabaseTableInfo> list = new ArrayList<DatabaseTableInfo>();
 
 
-        String sql = "select table_name,table_comment from information_schema.tables where table_schema=?;";
+        String sql = "select table_name,table_comment from information_schema.tables where table_schema=? and table_name like ?;";
         PreparedStatement preStatement = conn.prepareStatement(sql);
         preStatement.setString(1, database);
+        preStatement.setString(2, "%"+tableName+"%");
         ResultSet result = preStatement.executeQuery();
 
         // 展开结果集数据库
@@ -40,6 +42,9 @@ public class DatabaseTableInfoUtils {
         } catch (Exception e){
             e.printStackTrace();
         }
+        if(list.size()<=0){
+        	throw new GenerateException("没有找到对应的表");
+        }        
         return list;
     }
 }

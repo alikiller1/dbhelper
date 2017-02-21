@@ -193,6 +193,11 @@ public class DbHelperClient extends JFrame {
                 if(isEmpty(port)){
                     port = "3306";
                 }
+                String tableName=tableNameField.getText();
+                if(isEmpty(tableName)){
+                	 showError("tablename is empty");
+                     return;
+                }
 
                 String targetDir = targetField.getText();
                 if(isEmpty(targetDir)){
@@ -207,7 +212,7 @@ public class DbHelperClient extends JFrame {
 
 
                 try {
-                    Generate.start(host, username, password, database, port, packageName, targetDir);
+                    Generate.start(host, username, password, database, port, packageName, targetDir,tableName);
                     showSuccess("Done!!");
                 } catch (GenerateException e1) {
                     showError(e1.getMessage());
@@ -218,6 +223,7 @@ public class DbHelperClient extends JFrame {
                 ConfigUtils.setValue("host",host);
                 ConfigUtils.setValue("username",username);
                 ConfigUtils.setValue("password",password);
+                ConfigUtils.setValue("tableName",tableName);
 
                 ConfigUtils.setValue("database",database);
                 ConfigUtils.setValue("port",port);
@@ -237,6 +243,7 @@ public class DbHelperClient extends JFrame {
 
         databaseField.setText(ConfigUtils.getValue("database"));
         portField.setText(ConfigUtils.getValue("port"));
+        tableNameField.setText(ConfigUtils.getValue("tableName"));
         packageField.setText(ConfigUtils.getValue("packageName"));
         targetField.setText(ConfigUtils.getValue("targetDir"));
 

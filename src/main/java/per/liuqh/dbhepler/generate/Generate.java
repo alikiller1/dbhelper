@@ -31,7 +31,7 @@ public class Generate {
 
     private static final String DB_URL = "jdbc:mysql://%s:%s/%s?useUnicode=true&amp;characterEncoding=utf-8";
 
-    private Generate(String host, String username, String password, String database, String port, String packageName, String targetDir) throws GenerateException {
+    private Generate(String host, String username, String password, String database, String port, String packageName, String targetDir,String tableName) throws GenerateException {
 
         String url = String.format(DB_URL, host, port, database);
 
@@ -45,13 +45,15 @@ public class Generate {
             conn = DriverManager.getConnection(url, username, password);
 
             // 获取对应数据库表信息
-            List<DatabaseTableInfo> list = DatabaseTableInfoUtils.load(conn, database);
+            List<DatabaseTableInfo> list = DatabaseTableInfoUtils.load(conn, database,tableName);
             for (DatabaseTableInfo info : list) {
                 create(conn, database, packageName, info, targetDir);
             }
 
 
-        } catch (Exception e) {
+        }catch(GenerateException e){
+        	throw e;
+        }catch (Exception e) {
             e.printStackTrace();
             throw new GenerateException("JDBC Error");
         } finally {
@@ -123,7 +125,7 @@ public class Generate {
         }
     }
 
-    public static void start(String host, String username, String password, String database, String port, String packageName, String targetDir) throws GenerateException {
-        new Generate(host, username, password, database, port, packageName, targetDir);
+    public static void start(String host, String username, String password, String database, String port, String packageName, String targetDir,String tableName) throws GenerateException {
+        new Generate(host, username, password, database, port, packageName, targetDir,tableName);
     }
 }
