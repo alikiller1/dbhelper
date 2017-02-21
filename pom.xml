@@ -4,7 +4,7 @@
 
 	<groupId>per.liuqh</groupId>
 	<artifactId>dbhelper</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>dbhelper</name>
@@ -46,7 +46,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>per.liuqh.dbhepler.client.DbHelperClient</mainClass>
+							<mainClass>per.liuqh.dbhelper.client.DbHelperClient</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -61,5 +61,6 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>dbhelper</finalName>
 	</build>
 </project>

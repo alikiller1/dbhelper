@@ -1,4 +1,4 @@
-package per.liuqh.dbhepler.generate.utils;
+package per.liuqh.dbhelper.generate.utils;
 
 /**
  *

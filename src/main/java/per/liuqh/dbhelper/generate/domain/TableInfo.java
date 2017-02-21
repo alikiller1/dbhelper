@@ -1,8 +1,8 @@
-package per.liuqh.dbhepler.generate.domain;
+package per.liuqh.dbhelper.generate.domain;
 
 import java.io.Serializable;
 
-import per.liuqh.dbhepler.generate.utils.ColumnUtils;
+import per.liuqh.dbhelper.generate.utils.ColumnUtils;
 
 public class TableInfo implements Serializable {
 

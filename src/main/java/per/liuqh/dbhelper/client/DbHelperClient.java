@@ -1,4 +1,4 @@
-package per.liuqh.dbhepler.client;
+package per.liuqh.dbhelper.client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,9 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import per.liuqh.dbhepler.generate.Generate;
-import per.liuqh.dbhepler.generate.GenerateException;
-import per.liuqh.dbhepler.utils.ConfigUtils;
+import per.liuqh.dbhelper.generate.Generate;
+import per.liuqh.dbhelper.generate.GenerateException;
+import per.liuqh.dbhelper.utils.ConfigUtils;
 
 /**
  * Created by denghb on 2017/2/19.

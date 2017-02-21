@@ -1,4 +1,4 @@
-package per.liuqh.dbhepler.generate;
+package per.liuqh.dbhelper.generate;
 
 
 import java.io.BufferedWriter;
@@ -15,11 +15,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import per.liuqh.dbhepler.generate.domain.DatabaseTableInfo;
-import per.liuqh.dbhepler.generate.domain.TableInfo;
-import per.liuqh.dbhepler.generate.utils.ColumnUtils;
-import per.liuqh.dbhepler.generate.utils.DatabaseTableInfoUtils;
-import per.liuqh.dbhepler.generate.utils.TableInfoUtils;
+import per.liuqh.dbhelper.generate.domain.DatabaseTableInfo;
+import per.liuqh.dbhelper.generate.domain.TableInfo;
+import per.liuqh.dbhelper.generate.utils.ColumnUtils;
+import per.liuqh.dbhelper.generate.utils.DatabaseTableInfoUtils;
+import per.liuqh.dbhelper.generate.utils.TableInfoUtils;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 

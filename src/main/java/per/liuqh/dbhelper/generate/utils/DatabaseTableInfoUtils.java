@@ -1,4 +1,4 @@
-package per.liuqh.dbhepler.generate.utils;
+package per.liuqh.dbhelper.generate.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import per.liuqh.dbhepler.generate.GenerateException;
-import per.liuqh.dbhepler.generate.domain.DatabaseTableInfo;
+import per.liuqh.dbhelper.generate.GenerateException;
+import per.liuqh.dbhelper.generate.domain.DatabaseTableInfo;
 
 /**
  * Created by ppd on 2017/2/20.

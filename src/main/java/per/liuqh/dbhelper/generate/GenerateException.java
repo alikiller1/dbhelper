@@ -1,4 +1,4 @@
-package per.liuqh.dbhepler.generate;
+package per.liuqh.dbhelper.generate;
 
 /**
  * Created by ppd on 2017/2/20.
