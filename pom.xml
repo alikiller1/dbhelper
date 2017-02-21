@@ -33,12 +33,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<!-- 不支持java1.7 -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
 				<configuration>
 					<appendAssemblyId>false</appendAssemblyId>
 					<descriptorRefs>
@@ -55,7 +57,7 @@
 						<id>make-assembly</id>
 						<phase>package</phase>
 						<goals>
-							<goal>assembly</goal>
+							<goal>single</goal>
 						</goals>
 					</execution>
 				</executions>

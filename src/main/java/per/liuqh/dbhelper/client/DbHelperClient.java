@@ -249,21 +249,7 @@ public class DbHelperClient extends JFrame {
 
     }
 
-    public static void main(String[] args) {
-
-        EventQueue.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    new DbHelperClient();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-    }
+    
 
     private void showSuccess(String msg){
         msgLabel.setText(msg);
@@ -297,5 +283,21 @@ public class DbHelperClient extends JFrame {
      */
     private static int getBottom(JComponent component) {
         return component.getY() + component.getHeight();
+    }
+    
+    public static void main(String[] args) {
+
+        EventQueue.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    new DbHelperClient();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 }
