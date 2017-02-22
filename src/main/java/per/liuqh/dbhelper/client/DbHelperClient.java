@@ -25,7 +25,6 @@ import per.liuqh.dbhelper.utils.ConfigUtils;
  */
 public class DbHelperClient extends JFrame {
 	
-
     private JTextField targetField;
     private JLabel msgLabel;
 
